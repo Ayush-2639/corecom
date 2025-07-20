@@ -47,7 +47,7 @@ def get_orders_for_user(
         limit: int = Query(5, gt=0, le=100),
         offset: int = Query(0, ge=0)
 ):
-    query = {"user_id": ObjectId(user_id)}
+    query = {"user_id": user_id}
     total_orders = order_collection.count_documents(query)
 
     orders_cursor = (
