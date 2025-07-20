@@ -31,7 +31,7 @@ def create_order(order: OrderCreate):
         })
 
     order_doc = {
-        "user_id": ObjectId(order.user_id),
+        "user_id": order.user_id,
         "items": validated_items
     }
 
